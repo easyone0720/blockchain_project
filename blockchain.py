@@ -45,3 +45,17 @@ class HashChain:
                 return False
 
         return True
+
+
+    """
+    * __init__ : 객체가 생성되는 순간 자동으로 실행되는 특수 메서드
+    - chain = HashChain()이라고 적는 순간, 파이썬이 자동으로 __init__을 호출해서 self.chain이라는 변수를 해당 객체에 생성
+    - get_latest_block()이 호출되는 시점에는 이미 __init__이 실행되어 self.chain이 존재하는 상태임
+
+                # index      #data  # previous_hash
+    *  Block(len(self.chain), data, latest.hash)인데 왜 인자는 3개뿐?
+    - self는 직접 넘겨주는 값이 아닌 파이썬이 자동으로 채워주는 값
+    - self는 "지금 만들어지고 있는 이 블록 객체 자신"을 가리키는 자리
+    - self는 정의할 때만 명시적으로 쓰고, 호출할 때는 항상 자동으로 빠짐
+    > __init__(self, index, data, previous_hash)는 매개변수가 4개처럼 보이지만, 실제로 호출할 때 필요한 매개변수는 self를 제외한 세 가지
+    """
