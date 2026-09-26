@@ -34,7 +34,7 @@ class HashChain:
             current = self.chain[i] # 지금 검사하는 블록
             previous = self.chain[i-1] # 바로 앞 블록
 
-            if current.hash != current.calcuate_hash():
+            if current.hash != current.calculate_hash():
                 # 1. 저장된 해시 vs 재계산한 해시 불일치 -> data가 변조됨
                 print(f"블록 {current.index}: 데이터가 변조됨 (해시 불일치)")
                 return False
